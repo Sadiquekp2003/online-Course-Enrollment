@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login - Course System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Admin Login - Online Course System</h2>
+    </div>
+
+    <div class="container" style="max-width: 500px; margin-top: 50px;">
+
+        <h2 style="text-align: center;">Admin Login</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('admin_login') }}">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="admin@example.com" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="{{ url_for('index') }}" class="btn" style="background-color: #6c757d;">Back to Home</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

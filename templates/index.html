@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Course Enrollment System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Online Course Enrollment System</h2>
+    </div>
+
+    <div class="container" style="text-align: center;">
+        <h1>Welcome to the Course Portal</h1>
+        <p>Explore, Enroll, and Learn! Students can register, view available courses, and enroll easily.</p>
+
+        <div style="margin-top: 30px;">
+            <a href="{{ url_for('login') }}" class="btn">Student Login</a>
+            <a href="{{ url_for('register') }}" class="btn" style="margin-left: 15px;">Register</a>
+            <a href="{{ url_for('admin_login') }}" class="btn" style="margin-left: 15px; background-color: #28a745;">Admin Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
